@@ -1,0 +1,15 @@
+<h2>Welcome to your wedding planner <%= current_user.name %>!</h2>
+<p>
+<strong>
+  Email:
+</strong><%= current_user.email %>
+
+<ul class="user-events list-unstyled">
+<% @user.events.each do |event| %>
+  <li>
+  <%= link_to event.name, edit_event_path(id: event.id)  %>
+   - <%= l(event.event_date, :format => :long) %></li>
+
+<% end %>
+</ul>
+<button><%= t('.add_event') %></button>

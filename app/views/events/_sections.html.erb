@@ -1,0 +1,11 @@
+<h3>Sections</h3>
+
+<ul class="unstyled-list">
+  <% @event.sections.each do |section| %>
+    <li>
+      <h3><%= section.title %></h3>
+      <div><%= section.content %></div>
+
+    </li>
+  <% end %>
+</ul>

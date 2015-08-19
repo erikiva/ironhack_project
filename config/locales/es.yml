@@ -1,0 +1,16 @@
+es:
+  menu:
+    new_event: "Añadir evento"
+    languages:
+      lang: "Lenguaje"
+      es: "Spanish"
+      en: "English"
+  users:
+    profile:
+      add_event: "Añadir evento"
+  events:
+    main:
+      guests: "Invitados"
+      options: "Opciones"
+      event_details: "Detalles del evento"
+

@@ -1,0 +1,10 @@
+<h3>Guest List</h3>
+
+<ul class="unstyled-list">
+  <% @event.guests.each do |guest| %>
+    <li>
+      <%= guest.email %>
+
+    </li>
+  <% end %>
+</ul>
