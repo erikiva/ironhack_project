@@ -12,6 +12,8 @@ class EventsController < ApplicationController
 
   def edit
     @event = Event.find(params[:id])
+    @guest = Guest.new
+    @section = Section.new
     render 'main'
   end
 

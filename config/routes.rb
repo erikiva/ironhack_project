@@ -2,7 +2,13 @@ Rails.application.routes.draw do
   devise_for :users
   resources :events do
       resources :sections
+      resources :guests do
+        resources :rsvp
+      end
+      resources :rsvp_options
   end
+
+
 
   get 'sessions/new' => 'sessions#new'
   get 'sessions/create' => 'sessions#create'

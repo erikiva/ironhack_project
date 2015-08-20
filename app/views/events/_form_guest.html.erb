@@ -1,0 +1,15 @@
+<%= form_for([@event, @guest]) do |f| %>
+
+
+  <div class="row">
+
+
+        <%= f.text_field :name %>
+        <%= f.text_field :email %>
+
+        <%= f.submit t('.add_guest'), :class => 'btn btn-primary' %>
+
+
+  </div>
+
+<% end %>

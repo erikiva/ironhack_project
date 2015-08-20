@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150818153436) do
+ActiveRecord::Schema.define(version: 20150819174153) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,6 +36,24 @@ ActiveRecord::Schema.define(version: 20150818153436) do
   end
 
   add_index "guests", ["event_id"], name: "index_guests_on_event_id", using: :btree
+
+  create_table "rsvp_option_values", force: :cascade do |t|
+    t.string   "value"
+    t.integer  "rsvp_option_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  add_index "rsvp_option_values", ["rsvp_option_id"], name: "index_rsvp_option_values_on_rsvp_option_id", using: :btree
+
+  create_table "rsvp_options", force: :cascade do |t|
+    t.string   "option_name"
+    t.integer  "event_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "rsvp_options", ["event_id"], name: "index_rsvp_options_on_event_id", using: :btree
 
   create_table "sections", force: :cascade do |t|
     t.string   "title"
@@ -69,5 +87,7 @@ ActiveRecord::Schema.define(version: 20150818153436) do
 
   add_foreign_key "events", "users"
   add_foreign_key "guests", "events"
+  add_foreign_key "rsvp_option_values", "rsvp_options"
+  add_foreign_key "rsvp_options", "events"
   add_foreign_key "sections", "events"
 end

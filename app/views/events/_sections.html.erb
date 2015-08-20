@@ -1,5 +1,10 @@
 <h3>Sections</h3>
 
+<% if @event.sections.count < 5 %>
+  <%= render 'form_section' %>
+<% end %>
+
+
 <ul class="unstyled-list">
   <% @event.sections.each do |section| %>
     <li>

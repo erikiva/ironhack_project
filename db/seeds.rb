@@ -36,7 +36,8 @@ end
 def create_guests(number, event)
   guests = []
   number.times {|n| guests << Guest.create( event_id: event.id,
-                    email: 'nataliav@gmail.com',
+                    name: Faker::Name.name,
+                    email: Faker::Internet.email,
                     access_hash: Faker::Lorem.characters(30)
                     )}
   puts event.id
