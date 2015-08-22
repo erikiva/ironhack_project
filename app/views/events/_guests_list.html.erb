@@ -1,0 +1,27 @@
+<table class="table">
+  <tr>
+    <th>
+      <%= t 'guests.name' %>
+    </th>
+    <th>
+      <%= t 'guests.email' %>
+    </th>
+    <th>
+
+    </th>
+  </tr>
+  <% @event.guests.each do |guest| %>
+    <tr>
+      <td>
+      <%=  guest.name %>
+      </td>
+      <td>
+        <%= guest.email %>
+      </td>
+      <td>
+        'actions'
+      </td>
+    </tr>
+  <% end %>
+</ul>
+

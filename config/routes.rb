@@ -25,5 +25,7 @@ Rails.application.routes.draw do
   get '/guest/:hash' => 'guest#enter'
   root to: 'users#profile'
 
+  post 'guests/add' => 'guests#add'
+
   get '/change_locale/:locale', to: 'settings#change_locale', as: :change_locale
  end

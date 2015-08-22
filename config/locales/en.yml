@@ -45,4 +45,12 @@ en:
       event_details: "Event details"
     form_guest:
       add_guest: "Add Guest"
+    new_guests:
+      new_guests_placeholder: "Name, Email ... One per line"
+  guests:
+    name: "Name"
+    email: "Email"
+  forms:
+    save: "Save"
+
 

@@ -1,10 +1,9 @@
 <h3>Guest List</h3>
-<%= render  "form_guest" %>
-<ul class="unstyled-list">
-  <% @event.guests.each do |guest| %>
-    <li>
-      <%= guest.email %>
+<%= render  "new_guests" %>
 
-    </li>
-  <% end %>
-</ul>
+<div id="guest-list">
+<% if @event.guests.count > 0 %>
+
+  <%= render  "guests_list" %>
+<% end %>
+</div>

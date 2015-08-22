@@ -1,0 +1,59 @@
+<%= form_tag '#', id: @event.id, class: "guests-form" do %>
+  <%= hidden_field_tag 'event', @event.id %>
+  <div><%= text_area_tag 'new_guests', '', size: "80x10"  %>
+  <div><%= submit_tag t('forms.save'), id:"send-guests", class: "btn btn-primary" %></div>
+<% end %>
+
+
+
+
+
+<script type="text/javascript">
+
+function parse_data(event, guests){
+  var data = {};
+  data['event'] = event;
+  data['guests'] = [];
+  var arrayOfLines = $('#new_guests').val().split('\n');
+  for (var i = 0; i < arrayOfLines.length; i++) {
+    name_email = arrayOfLines[i].split(',');
+    data['guests'].push({'name':name_email[0].trim(),
+        'email':name_email[1].trim()});
+  }
+  console.log(data);
+  return data;
+}
+
+
+function onSubmit(event){
+  event.preventDefault();
+  data = parse_data($(this).attr('id'), $('#new_guests').val());
+
+  var request = $.ajax({url:'/guests/add',
+                        method: 'POST',
+                        data: JSON.stringify(data),
+                        dataType: 'html',
+                        contentType: 'application/json'});
+
+  function onSaveSuccess (response) {
+    console.log(response)
+    $('#guest-list').html(response);
+    $('#new_guests').val('');
+  }
+
+  function onSaveFailure (err1, err2, err3) {
+    console.error('OH NO!!', err1, err2, err3);
+  }
+
+
+  request.done(onSaveSuccess);
+  request.fail(onSaveFailure);
+
+
+  console.log(test)
+}
+
+
+$('.guests-form').on('submit', onSubmit);
+
+</script>
