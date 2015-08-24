@@ -26,9 +26,20 @@ es:
       add_guest: "Añadir Invitado"
     new_guests:
       new_guests_placeholder: "Nombre, Email ... Uno por linea"
+  sections:
+    notes: |
+      Arrastrar las secciones para reordenarlas.
+      Los invitados verán las secciones en este orden.
   guests:
     name: "Nombre"
     email: "Email"
+    hint: |
+        Añadir la lista de nombres e emails separados por commas:
+        nombre, email
+        nombre, email
+        ...
   forms:
     save: "Guardar"
+    edit: "Editar"
+    add: "Añadir"
 

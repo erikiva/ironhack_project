@@ -8,7 +8,7 @@ Rails.application.routes.draw do
       resources :rsvp_options
   end
 
-
+  put 'sections/sort' => 'sections#sort'
 
   get 'sessions/new' => 'sessions#new'
   get 'sessions/create' => 'sessions#create'

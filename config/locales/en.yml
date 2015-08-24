@@ -47,10 +47,19 @@ en:
       add_guest: "Add Guest"
     new_guests:
       new_guests_placeholder: "Name, Email ... One per line"
+  sections:
+    notes: |
+      Drag and drop sections to reorder them.
+      Your guests will see the sections on this order.
   guests:
     name: "Name"
     email: "Email"
+    hint: |
+        Add your list of names as emails as comma separated values:
+        name, email
+        name, email
+        ...
   forms:
     save: "Save"
-
-
+    edit: "Edit"
+    add:  "Add"

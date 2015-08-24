@@ -1,5 +1,5 @@
 <h2><%= @event.name %></h2>
-<ul class="nav nav-tabs event-options">
+<ul class="nav nav-tabs event-options" id="event">
   <li class="active"><a data-toggle="tab" href="#details"><%= t '.event_details' %></a></li>
   <li><a data-toggle="tab" href="#guests"><%= t '.guests' %></a></li>
   <li><a data-toggle="tab" href="#options"><%= t '.options' %></a></li>
@@ -16,3 +16,23 @@
     <%= render  "options" %>
   </div>
 </div>
+
+
+
+  <script>
+    $('#event a').click(function (e) {
+        e.preventDefault()
+        $(this).tab('show')
+    });
+
+    // store the currently selected tab in the hash value
+    $("ul.nav-tabs > li > a").on("shown.bs.tab", function (e) {
+        var id = $(e.target).attr("href").substr(1);
+        window.location.hash = id;
+    });
+
+    // on load of the page: switch to the currently selected tab
+    var hash = window.location.hash;
+    $('#event a[href="' + hash + '"]').tab('show');
+
+</script>

@@ -1,2 +1,26 @@
-<h1>Events#show</h1>
-<p>Find me in app/views/events/show.html.erb</p>
+<h2><%= @event.name %></h2>
+<ul class="nav nav-tabs event-options">
+  <% @event.sections.each_with_index  do |section, i| %>
+  <% css_class = i == 1 ? 'class="active"'  : '' %>
+
+
+  <li <%= css_class %>><a data-toggle="tab" href="#<%= i %>"><%= section.title %></a></li>
+  <% end %>
+  <li><a data-toggle="tab" href="#rsvp">RSVP</a></li>
+</ul>
+
+<div class="tab-content">
+
+  <% @event.sections.each_with_index  do |section, i| %>
+  <% css_class = i == 1 ? ' fade in active'  : '' %>
+    <div id="<%= i %>" class="tab-pane <%= css_class %>">
+      <%= section.content %>
+    </div>
+  <% end %>
+  <div id="rsvp" class="tab-pane fade">
+    <%= render  "options" %>
+  </div>
+</div>
+
+
+

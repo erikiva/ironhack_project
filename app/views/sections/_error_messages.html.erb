@@ -1,0 +1,9 @@
+<div id="error_message">
+  <% if @section.errors.any? %>
+    <ul>
+      <% @section.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+      <% end %>
+    </ul>
+  <% end %>
+</div>
