@@ -33,6 +33,7 @@ gem 'devise', '~> 3.4.1'
 gem 'paperclip', '~> 4.2'
 gem 'rails-i18n', '~> 4.0.0' # for Rails 4
 
+gem 'rails_12factor'
 # Use Unicorn as the app server
 # gem 'unicorn'
 
