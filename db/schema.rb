@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150819174153) do
+ActiveRecord::Schema.define(version: 20150824105105) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,6 +20,9 @@ ActiveRecord::Schema.define(version: 20150819174153) do
     t.string   "name"
     t.integer  "user_id"
     t.datetime "event_date"
+    t.string   "location"
+    t.string   "longitud"
+    t.string   "latitud"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -31,8 +34,11 @@ ActiveRecord::Schema.define(version: 20150819174153) do
     t.integer  "event_id"
     t.string   "access_hash"
     t.string   "email"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.boolean  "notified"
+    t.boolean  "attending"
+    t.text     "requirements"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
   add_index "guests", ["event_id"], name: "index_guests_on_event_id", using: :btree
@@ -61,6 +67,7 @@ ActiveRecord::Schema.define(version: 20150819174153) do
     t.integer  "event_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "sort_order"
   end
 
   add_index "sections", ["event_id"], name: "index_sections_on_event_id", using: :btree

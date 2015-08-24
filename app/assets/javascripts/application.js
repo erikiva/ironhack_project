@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require html.sortable.min
 //= require bootstrap-sprockets
-//= require turbolinks
+//= require jquery-readyselector
 //= require_tree .
