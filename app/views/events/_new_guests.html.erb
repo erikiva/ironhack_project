@@ -1,6 +1,6 @@
 <%= form_tag '#', id: @event.id, class: "guests-form" do %>
   <%= hidden_field_tag 'event', @event.id %>
-  <div><%= text_area_tag 'new_guests', '', size: "80x10"  %>
+  <div><%= text_area_tag 'new_guests', '', size: "50x10"  %></div>
   <div><%= submit_tag t('forms.save'), id:"send-guests", class: "btn btn-primary" %></div>
 <% end %>
 
