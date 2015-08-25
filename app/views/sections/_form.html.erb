@@ -1,6 +1,6 @@
 <div class="row">
 
-  <%= form_for [@event, @section], remote: true do |f| %>
+  <%= form_for [@event, @section], remote: true,  "data-type" => "script" do |f| %>
   <div class="col-md-12">
     <%= render 'sections/error_messages' %>
   </div>
@@ -13,7 +13,8 @@
   <div class="col-md-4">
     <div class="form-group">
       <%= f.label :content %>
-      <%= f.text_area :content , class: 'form-control' %>
+      <%= f.text_area :content , class: 'form-control', placeholder: "Provide content here." %>
+      <%= f.hidden_field :event_id, :value => @event.id %>
     </div>
   </div>
   <div class="col-md-2">
@@ -23,7 +24,3 @@
 </div>
 
 
-
-<script>
-
-</script>

@@ -22,7 +22,7 @@ Rails.application.routes.draw do
   get 'users/show' => 'users#show'
 
   get 'users/profile' => 'users#profile'
-  get '/guest/:hash' => 'guest#enter'
+  get '/invitation/:hash' => 'guests#validate'
   root to: 'users#profile'
 
   post 'guests/add' => 'guests#add'

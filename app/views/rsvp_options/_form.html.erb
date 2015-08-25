@@ -1,0 +1,42 @@
+<%= form_for @rsvp_options do |f| %>
+  Addresses:
+  <ul>
+    <%= f.fields_for :rsvp_option_values do |values_form| %>
+      <li>
+      <div class="form-group">
+        <%= values_form.label :kind %>
+        <%= values_form.text_field :kind %>
+      </div>
+      <div class="form-group">
+        <%= values_form.label :street %>
+        <%= values_form.text_field :street %>
+      </div>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+
+
+<%= #form_for [@guest] do |f| %>
+
+  <%# error stuff ...  %>
+
+  <div class="field">
+    <%= #f.label :name %><br />
+    <%= #f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= #f.label :name %><br />
+    <%= #f.text_field :name %>
+  </div>
+
+  <%= #f.fields_for :songs do |builder| %>
+    <%=# render 'song_fields', f: builder %>
+  <% #end %>
+
+  <div class="actions">
+    <%= #f.submit %>
+  </div>
+<% #end %>

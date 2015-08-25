@@ -29,10 +29,11 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'rspec-rails', '~> 3.0'
 
 gem 'devise', '~> 3.4.1'
+gem 'pundit'
 gem 'paperclip', '~> 4.2'
 gem 'rails-i18n', '~> 4.0.0' # for Rails 4
 
-gem 'rails_12factor'
+#gem 'rails_12factor'
 # Use Unicorn as the app server
 # gem 'unicorn'
 

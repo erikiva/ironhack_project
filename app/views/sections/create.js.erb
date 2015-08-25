@@ -1,0 +1,7 @@
+console.log("create.js.erb file");
+$('#sections').append("<%= j (render partial: 'sections/section', locals: {section: @section} ) %>");
+
+if ($('.panel').length >= 5){
+  $('#new_section').hide();
+}
+

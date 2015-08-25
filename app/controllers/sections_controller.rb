@@ -10,16 +10,22 @@ class SectionsController < ApplicationController
   end
 
 
- def create
-    binding.pry
-     @event = Event.find_by(params[:event_id])
-     @section = @event.sections.create(section_params)
-     if @section.save
-       render :partial 'events/sections'
-     else
-       render :partial 'events/error'
-     end
-end
+  def create
+    #binding.pry
+    @section = Section.new(section_params)
+
+    respond_to do |format|
+      if @section.save
+        format.html { redirect_to @section.post, notice: 'Section was successfully created.' }
+        format.js
+        format.json { render :show, status: :created, location: @section}
+      else
+        format.html { render :new }
+        format.json { render json: @section.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
 
   def sort
     #binding.pry
@@ -31,6 +37,6 @@ end
 
   private
     def section_params
-         params.require(:section).permit(:title, :content)
+         params.require(:section).permit(:title, :content, :event_id)
     end
 end

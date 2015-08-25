@@ -1,4 +1,4 @@
 class Section < ActiveRecord::Base
   belongs_to :event
-  default_scope { order("sort_order ASC") }
+  default_scope { order("sort_order ASC, id ASC") }
 end

@@ -5,7 +5,7 @@ class CreateGuests < ActiveRecord::Migration
       t.belongs_to :event, index: true, foreign_key: true
       t.string :access_hash
       t.string :email
-      t.boolean :notified
+      t.boolean :notified, default: false
       t.boolean :attending
       t.text :requirements
 
