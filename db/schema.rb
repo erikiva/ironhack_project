@@ -21,8 +21,8 @@ ActiveRecord::Schema.define(version: 20150824144912) do
     t.integer  "user_id"
     t.datetime "event_date"
     t.string   "location"
-    t.string   "longitud"
-    t.string   "latitud"
+    t.string   "longitude"
+    t.string   "latitude"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -34,11 +34,11 @@ ActiveRecord::Schema.define(version: 20150824144912) do
     t.integer  "event_id"
     t.string   "access_hash"
     t.string   "email"
-    t.boolean  "notified"
+    t.boolean  "notified",     default: false
     t.boolean  "attending"
     t.text     "requirements"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
   end
 
   add_index "guests", ["email", "event_id"], name: "index_guests_on_email_and_event_id", unique: true, using: :btree
@@ -66,9 +66,9 @@ ActiveRecord::Schema.define(version: 20150824144912) do
     t.string   "title"
     t.text     "content"
     t.integer  "event_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer  "sort_order"
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+    t.integer  "sort_order", default: 1
   end
 
   add_index "sections", ["event_id"], name: "index_sections_on_event_id", using: :btree

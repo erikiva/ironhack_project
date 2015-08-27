@@ -18,4 +18,12 @@ class ApplicationController < ActionController::Base
     I18n.locale = l
   end
 
+  helper_method :current_guest
+    def current_guest
+      if @current_guest.nil?
+        @current_guest = Guest.find_by(access_hash: session[:guest_hash])
+      end
+    @current_guest
+end
+
 end

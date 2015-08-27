@@ -5,8 +5,8 @@ class CreateEvents < ActiveRecord::Migration
       t.belongs_to :user, index: true, foreign_key: true
       t.datetime :event_date
       t.string :location
-      t.string :longitud
-      t.string :latitud
+      t.string :longitude
+      t.string :latitude
 
       t.timestamps null: false
     end

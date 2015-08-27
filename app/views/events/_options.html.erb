@@ -1,0 +1,15 @@
+<h3><%=  t 'events.main.guest_options' %></h3>
+
+  <%= render 'rsvp_options/form' %>
+
+<div id="new-section"></div>
+<div class="row">
+<div class="col-md-12">
+  <p class="bg-success"><%= t 'sections.notes' %></p>
+</div>
+<div class="list-unstyled col-md-12 sortable" id="options">
+  <% @event.rsvp_options.each do |option| %>
+      <%= render partial: 'rsvp_options/form', locals: {rsvp_option: option} %>
+  <% end %>
+</div>
+</div>

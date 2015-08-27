@@ -32,6 +32,8 @@ gem 'devise', '~> 3.4.1'
 gem 'pundit'
 gem 'paperclip', '~> 4.2'
 gem 'rails-i18n', '~> 4.0.0' # for Rails 4
+gem 'momentjs-rails', '>= 2.9.0'
+gem 'bootstrap3-datetimepicker-rails', '~> 4.15.35'
 
 #gem 'rails_12factor'
 # Use Unicorn as the app server

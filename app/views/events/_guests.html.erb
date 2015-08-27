@@ -6,6 +6,10 @@
   <div class="col-md-6">
     <%= simple_format t 'guests.hint' %>
   </div>
+  <div class="col-md-6">
+    <%= link_to t('guests.send_invitations'),  send_invitations_path,
+        method: 'post', remote: true, class: 'btn btn-primary' %>
+  </div>
 </div>
 
 <div class="row">

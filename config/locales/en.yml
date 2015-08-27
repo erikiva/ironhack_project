@@ -43,10 +43,15 @@ en:
       guests: "Guests"
       options: "Options"
       event_details: "Event details"
+      sections: "Sections for the wedding site"
+      guest_options: "Guests RSVP Options"
+    show:
+      where_when: "Where and When"
     form_guest:
       add_guest: "Add Guest"
     new_guests:
       new_guests_placeholder: "Name, Email ... One per line"
+    view_as_guest: "View page as a guest"
   sections:
     notes: |
       Drag and drop sections to reorder them.
@@ -54,12 +59,21 @@ en:
   guests:
     name: "Name"
     email: "Email"
+    attending: "Attending"
+    notified: "Notified"
     hint: |
         Add your list of names as emails as comma separated values:
         name, email
         name, email
         ...
+    send_invitations: "Email Invitations"
+  rsvp_options:
+    options: "Guests Options"
   forms:
     save: "Save"
     edit: "Edit"
     add:  "Add"
+    required: "Mandatory field"
+    login: "Log In"
+    logout: "Log Out"
+    register: "Register"

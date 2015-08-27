@@ -21,8 +21,28 @@ class GuestsController < ApplicationController
     render partial: 'events/guests_list'
   end
 
-  def process_guests guests
+  def validate
+    binding.pry
+    @guest = Guest.find_by(access_hash: params[:hash])
+    if @guest
+      @event = @guest.event
+      redirect_to event_path @event
 
+    else
+    end
+
+  end
+
+  def send_invitations
+    @event = Event.find(params[:id])
+    @event.guests.where("not notified").each do |guest|
+      GuestMailer.invite(guest).deliver_now
+      guest.notified = true
+      guest.save
+    end
+  end
+
+  def edit
   end
 
   def new

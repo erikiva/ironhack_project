@@ -15,16 +15,16 @@
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
-
+@import 'bootstrap-datetimepicker';
 
 $primary-color: #4A1A2C;
 
 h1, h2, h3, h4, h5 {
-  font-family: Handlee;
+  font-family: Sofia;
 }
 
 .navbar-brand {
-  font-family: Handlee;
+  font-family: Sofia;
   font-size: 30px;
 }
 
@@ -46,7 +46,7 @@ body {
 }
 
 .event-options li {
-  font-family: Handlee;
+  font-family: Sofia;
   font-size: 1.2em;
   font-weight: bold;
 }
@@ -71,7 +71,9 @@ body {
 
 }
 
-
+.list-group, .list-group-item {
+  background: rgba(255,255,255, 0.7);
+}
 
 .sortable-placeholder {
   border: 1px dashed #CCC;
@@ -86,4 +88,21 @@ body {
 
 .bg-success {
       padding: 15px;
+}
+
+#map {
+  width: 100%;
+  height: 300px;
+}
+
+.attending {
+  color: #717A24;
+}
+
+.event-date {
+  float:right;
+}
+
+.switch-views {
+ float:right;
 }

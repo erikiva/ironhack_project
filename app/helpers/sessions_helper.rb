@@ -6,4 +6,9 @@ module SessionsHelper
   def logged_in?
     !current_user.nil?
   end
+
+  # def current_guest
+  #   @current_guest ||= Guest.find_by(access_hash: session[:guest_hash])
+  # end
+
 end

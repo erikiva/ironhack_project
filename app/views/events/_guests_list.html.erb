@@ -7,6 +7,12 @@
       <%= t 'guests.email' %>
     </th>
     <th>
+      <%= t 'guests.attending' %>
+    </th>
+    <th>
+      <%= t 'guests.notified' %>
+    </th>
+    <th>
 
     </th>
   </tr>
@@ -19,9 +25,19 @@
         <%= guest.email %>
       </td>
       <td>
+        <% if guest.attending %>
+           <span class="glyphicon glyphicon-ok attending" aria-hidden="true"></span>
+        <% end %>
+      </td>
+      <td>
+        <% if guest.notified %>
+           <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+        <% end %>
+      </td>
+      <td>
         <button class="btn btn-default" ><%= t('forms.edit') %></button>
       </td>
     </tr>
   <% end %>
-</ul>
+</table>
 

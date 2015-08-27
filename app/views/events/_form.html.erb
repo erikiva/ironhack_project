@@ -1,0 +1,41 @@
+
+<%= form_for @event, html: {class: 'event-form'} do |f| %>
+  <div class="col-md-12">
+    <%= render 'events/error_messages' %>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="form-group">
+        <%= f.label :name %>
+        <%= f.text_field :name, class: 'form-control', :required => true, oninvalid: "try{setCustomValidity('#{t('forms.required')}')}catch(e){}" %>
+      </div>
+      <div class="form-group">
+        <%= f.label :event_date %>
+        <div class='input-group date' id='event-datetimepicker'>
+
+          <%= f.text_field :event_date, class: 'form-control',
+              :required => true,
+              :value => @event.event_date.strftime("%d/%m/%Y HH:MM"),
+              oninvalid: "try{setCustomValidity('#{t('forms.required')}')}catch(e){}"  %>
+          <span class="input-group-addon">
+            <span class="glyphicon glyphicon-calendar"></span>
+          </span>
+        </div>
+      </div>
+      <div class="form-group">
+          <%= f.label :location %>
+          <%= f.text_field :location , class: 'form-control controls' %>
+          <%= f.hidden_field :latitude %>
+          <%= f.hidden_field :longitude %>
+          <%= f.hidden_field :user_id, value: @event.user_id  %>
+      </div>
+    </div>
+    <div class="col-md-2">
+      <%= f.submit t 'forms.add', class:'btn btn-default' %>
+    </div>
+  </div>
+
+<% end %>
+
+
+

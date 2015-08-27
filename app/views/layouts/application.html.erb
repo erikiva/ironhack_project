@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>Wedding Planner</title>
-  <link href='http://fonts.googleapis.com/css?family=Handlee'
+  <link href='http://fonts.googleapis.com/css?family=Sofia'
         rel='stylesheet' type='text/css'>
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
@@ -31,18 +31,17 @@
         </ul>
       </li>
       <li>
-
         <% if user_signed_in? %>
-                        <p><%= link_to 'Sign out', destroy_user_session_path, method:
-                    'DELETE' %></p>
-<% else %> <p>
-                          <%= link_to 'Sign_up', new_user_registration_path %> |
-                          <%= link_to 'Sign_in', new_user_session_path %>
-                        </p>
-                      <% end %>
-
-
-
+          <p class="navbar-text navbar-right">
+            <%= link_to 'Sign out', destroy_user_session_path,
+                method: 'DELETE' %>
+          </p>
+        <% else %>
+          <p class="navbar-text navbar-right">>
+            <%= link_to 'Sign_up', new_user_registration_path %> |
+            <%= link_to 'Sign_in', new_user_session_path %>
+          </p>
+        <% end %>
       </li>
     </ul>
     </div>

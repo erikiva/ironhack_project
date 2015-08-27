@@ -5,8 +5,10 @@ Rails.application.routes.draw do
       resources :guests do
         resources :rsvp
       end
-      resources :rsvp_options
+
   end
+
+  resources :rsvp_options
 
   put 'sections/sort' => 'sections#sort'
 
@@ -22,8 +24,10 @@ Rails.application.routes.draw do
   get 'users/show' => 'users#show'
 
   get 'users/profile' => 'users#profile'
-  get '/invitation/:hash' => 'guests#validate'
+  get '/invitation/:hash' => 'guests#validate', as: :invitation
   root to: 'users#profile'
+
+  post '/send_invitations/:id' => 'guests#send_invitations', as: :send_invitations
 
   post 'guests/add' => 'guests#add'
 

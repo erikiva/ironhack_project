@@ -1,18 +1,26 @@
 <h2><%= @event.name %></h2>
+<%= link_to event_path @event do %>
+      <button class="btn btn-default switch-views"><%= t 'events.view_as_guest' %></button>
+<% end %>
+
 <ul class="nav nav-tabs event-options" id="event">
-  <li class="active"><a data-toggle="tab" href="#details"><%= t '.event_details' %></a></li>
-  <li><a data-toggle="tab" href="#guests"><%= t '.guests' %></a></li>
+  <li><a data-toggle="tab" href="#details"><%= t '.event_details' %></a></li>
+  <li><a data-toggle="tab" href="#sections"><%= t '.sections' %></a></li>
+  <li class="active"><a data-toggle="tab" href="#guests"><%= t '.guests' %></a></li>
   <li><a data-toggle="tab" href="#options"><%= t '.options' %></a></li>
 </ul>
 
 <div class="tab-content">
-  <div id="details" class="tab-pane fade in active">
+  <div id="details" class="tab-pane fade">
+     <%= render  "edit" %>
+  </div>
+  <div id="sections" class="tab-pane fade">
      <%= render  "sections" %>
   </div>
-  <div id="guests" class="tab-pane fade">
+  <div id="guests" class="tab-pane fade in active">
     <%= render  "guests" %>
   </div>
-  <div id="options" class="tab-pane fade in active">
+  <div id="options" class="tab-pane fade">
     <%= render  "options" %>
   </div>
 </div>

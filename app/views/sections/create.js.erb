@@ -3,5 +3,7 @@ $('#sections').append("<%= j (render partial: 'sections/section', locals: {secti
 
 if ($('.panel').length >= 5){
   $('#new_section').hide();
+} else {
+  $("#new_section")[0].reset();
 }
 

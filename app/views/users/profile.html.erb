@@ -4,12 +4,5 @@
   Email:
 </strong><%= current_user.email %>
 
-<ul class="user-events list-unstyled">
-<% @user.events.each do |event| %>
-  <li>
-  <%= link_to event.name, edit_event_path(id: event.id)  %>
-   - <%= l(event.event_date, :format => :long) %></li>
 
-<% end %>
-</ul>
-<button><%= t('.add_event') %></button>
+<%= render partial: 'events/index'%>

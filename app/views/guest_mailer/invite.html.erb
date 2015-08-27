@@ -1,0 +1,3 @@
+<h1>Hi <%= @guest.name %></h1>
+<p>We have the pleassure to invite you to <%= @guest.event.name %>!
+Click <%= link_to 'to see all the details and join us ', invitation_url(@guest.access_hash) %> to sign in!</p>
