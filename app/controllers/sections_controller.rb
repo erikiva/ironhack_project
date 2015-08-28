@@ -25,7 +25,8 @@ class SectionsController < ApplicationController
     @event = Event.find(params[:event_id])
     @section.update_attributes(section_params)
     respond_to do |format|
-    format.js
+      format.js
+    end
   end
 
   def sort

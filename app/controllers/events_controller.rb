@@ -32,6 +32,8 @@ class EventsController < ApplicationController
 
   def show
     @event = Event.find(params[:id])
+    @guest = Guest.new
+
     @rsvp_option = RsvpOption.new
     @event.rsvp_options.build
   end

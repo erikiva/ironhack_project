@@ -52,6 +52,8 @@ en:
     new_guests:
       new_guests_placeholder: "Name, Email ... One per line"
     view_as_guest: "View page as a guest"
+    take_place: "Will take place: "
+    at: "at "
   sections:
     notes: |
       Drag and drop sections to reorder them.

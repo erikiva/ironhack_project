@@ -14,11 +14,11 @@
     <div class="form-group">
       <%= f.label :content %>
       <%= f.text_area :content , size: "30x10", class: 'form-control', placeholder: "Provide content here." %>
-        <%= f.hidden_field :event_id %>
+        <%= f.hidden_field :event_id, value: @event.id %>
     </div>
-  </div>
-  <div class="col-md-2">
-    <%= f.submit t('forms.add'), class:'btn btn-primary' %>
+    <div class="col-md-2">
+      <%= f.submit t('forms.add'), class:'btn btn-primary' %>
+    </div>
   </div>
   <% end %>
 </div>
