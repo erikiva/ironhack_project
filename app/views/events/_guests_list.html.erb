@@ -12,14 +12,11 @@
     <th>
       <%= t 'guests.notified' %>
     </th>
-    <th>
-
-    </th>
   </tr>
   <% @event.guests.each do |guest| %>
     <tr>
       <td>
-      <%=  guest.name %>
+        <%=  guest.name %>
       </td>
       <td>
         <%= guest.email %>

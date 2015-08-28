@@ -13,12 +13,12 @@
   <div class="col-md-4">
     <div class="form-group">
       <%= f.label :content %>
-      <%= f.text_area :content , class: 'form-control', placeholder: "Provide content here." %>
+      <%= f.text_area :content , size: "30x10", class: 'form-control', placeholder: "Provide content here." %>
         <%= f.hidden_field :event_id %>
     </div>
   </div>
   <div class="col-md-2">
-    <%= f.submit t 'forms.add', class:'btn btn-default' %>
+    <%= f.submit t('forms.add'), class:'btn btn-primary' %>
   </div>
   <% end %>
 </div>

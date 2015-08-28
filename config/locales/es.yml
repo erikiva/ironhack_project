@@ -48,6 +48,12 @@ es:
     send_invitations: "Enviar Invitaciones por Email"
   rsvp_options:
     options: "Guests Options"
+    name: "Nombre: "
+    values: "Valores: "
+    hint: |
+      Añadir el nombre de la opción y una lista de posibles valores separados por comas, por ejemplo:
+      Nombre: menu
+      Valores: Normal, Sin Gluten, Vegano
   forms:
     save: "Guardar"
     edit: "Editar"

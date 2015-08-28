@@ -1,16 +1,24 @@
-  <%= t 'rsvp_options.options' %>
+
 <%= form_for @rsvp_option do |f| %>
 
-  <ul>
-    <%= f.text_field :option_name %>
-    <%= f.fields_for :rsvp_option_values do |values_form| %>
-      <li>
+  <ul class="list-unstyled">
+    <li>
       <div class="form-group">
-        <%= values_form.label :value %>
-        <%= values_form.text_field :value %>
+        <%= f.label :option_name, t('rsvp_options.name') %>
+        <%= f.text_field :option_name %>
       </div>
-      </li>
-    <% end %>
+      <ul class="unstyled-list">
+        <%= f.fields_for :rsvp_option_values do |values_form| %>
+          <li>
+            <div class="form-group">
+              <%= values_form.label :value, t('rsvp_options.values') %>
+              <%= values_form.text_field :value %>
+            </div>
+          </li>
+        <% end %>
+        <%= f.submit t('forms.add'), class:'btn btn-primary' %>
+      </ul>
+    </li>
   </ul>
 <% end %>
 

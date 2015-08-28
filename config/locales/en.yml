@@ -69,6 +69,12 @@ en:
     send_invitations: "Email Invitations"
   rsvp_options:
     options: "Guests Options"
+    name: "Name"
+    values: "Option Values"
+    hint: |
+      Add option name and a list of possible values separated by commas, for example:
+      Name: menu
+      Values: Normal, GF, Vegan
   forms:
     save: "Save"
     edit: "Edit"

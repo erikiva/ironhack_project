@@ -1,14 +1,9 @@
 class SectionsController < ApplicationController
 
-
-  def index
-  end
-
   def new
     @event = Event.find(params[:event_id])
     @section = Section.new
   end
-
 
   def create
     #binding.pry
@@ -32,10 +27,6 @@ class SectionsController < ApplicationController
     respond_to do |format|
     format.js
   end
-
-  end
-
-
 
   def sort
     #binding.pry

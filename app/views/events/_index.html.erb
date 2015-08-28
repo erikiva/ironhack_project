@@ -1,15 +1,14 @@
 
 <%= link_to t('.add_event'), new_event_path, class: 'btn btn-default' %>
-<ul class="user-events list-group">
-<% @user.events.each  do |event| %>
-  <li  class="list-group-item">
-  <%= link_to event.name, edit_event_path(id: event.id)  %>
-  <span class="event-date">
-    <%= l(event.event_date, :format => :long) %>
-  </span>
-   </li>
-
-<% end %>
-</ul>
+  <ul class="user-events list-group">
+    <% @user.events.each  do |event| %>
+      <li  class="list-group-item">
+        <%= link_to event.name, edit_event_path(id: event.id)  %>
+        <span class="event-date">
+          <%= l(event.event_date, :format => :long) %>
+        </span>
+      </li>
+    <% end %>
+  </ul>
 
 

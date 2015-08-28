@@ -1,7 +1,5 @@
 class EventsController < ApplicationController
   respond_to :html, :js
-  def index
-  end
 
   def new
     @user = current_user
@@ -38,9 +36,6 @@ class EventsController < ApplicationController
     @event.rsvp_options.build
   end
 
-  def destroy
-
-  end
   private
     def event_params
          params.require(:event).permit(:name, :user_id, :event_date, :location, :latitude, :longitude)
