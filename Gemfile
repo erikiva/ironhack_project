@@ -35,12 +35,12 @@ gem 'rails-i18n', '~> 4.0.0' # for Rails 4
 gem 'momentjs-rails', '>= 2.9.0'
 gem 'bootstrap3-datetimepicker-rails', '~> 4.15.35'
 
-#gem 'rails_12factor'
-# Use Unicorn as the app server
-# gem 'unicorn'
+group :production, :staging do
+  gem "rails_12factor"
+  gem "rails_stdout_logging"
+  gem "rails_serve_static_assets"
+end
 
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
