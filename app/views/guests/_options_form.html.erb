@@ -1,17 +1,9 @@
-<%= form_for @rsvp_option do |f| %>
-  <%= t 'rsvp_options.options' %>
-  <ul>
-    <%= f.text_field :option_name %>
-    <%= f.hidden_field :event_id, value:  @event.id  %>
-    <%= f.fields_for :rsvp_option_values do |values_form| %>
-      <li>
-      <div class="form-group">
-        <%= values_form.label :value %>
-        <%= values_form.text_field :value %>
-      </div>
-      </li>
-    <% end %>
-  </ul>
+<%= form_for [@event, @guest] do |f| %>
+
+  <%= f.label :attending %>
+    <%= f.check_box :attending %>
+
+
 <% end %>
 
 

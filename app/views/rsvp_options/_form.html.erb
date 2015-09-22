@@ -14,6 +14,10 @@
               <%= values_form.label :value, t('rsvp_options.values') %>
               <%= values_form.text_field :value %>
             </div>
+            <div class="form-group">
+            <%= values_form.check_box :_destroy %>
+            <%= values_form.label :_destroy, "Remove Option" %>
+            </div>
           </li>
         <% end %>
         <%= f.submit t('forms.add'), class:'btn btn-primary' %>
@@ -21,5 +25,4 @@
     </li>
   </ul>
 <% end %>
-
 
