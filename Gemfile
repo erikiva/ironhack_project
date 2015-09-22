@@ -41,6 +41,7 @@ group :production, :staging do
   gem "rails_serve_static_assets"
 end
 
+gem 'faker'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -54,6 +55,5 @@ group :development, :test do
   gem 'pry-rails'
   gem 'quiet_assets'
   gem 'factory_girl_rails', '~> 4.5.0'
-  gem 'faker'
 end
 
