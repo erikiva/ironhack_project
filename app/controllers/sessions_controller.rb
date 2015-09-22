@@ -1,7 +1,7 @@
 class SessionsController < ApplicationController
 
   def create
-    binding.pry
+    #binding.pry
     user = User.find_by(email:
                           params[:session][:email].downcase)
     if user && user.authenticate(params[:session][:password])
@@ -18,7 +18,7 @@ class SessionsController < ApplicationController
   end
 
   def guest_create
-    binding.pry
+    #binding.pry
     guest = Guest.find_by(hassh:
                           params[:session][:email].downcase)
     if user && user.authenticate(params[:session][:password])
