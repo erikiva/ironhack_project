@@ -1,4 +1,4 @@
-class Event < ApplicationPolicy
+class EventPolicy < ApplicationPolicy
   attr_reader :user, :event
 
   class Scope < Scope
