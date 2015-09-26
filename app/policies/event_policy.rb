@@ -1,4 +1,4 @@
-class Event < ApplicationPolicy 
+class Event < ApplicationPolicy
   attr_reader :user, :event
 
   class Scope < Scope
@@ -8,16 +8,15 @@ class Event < ApplicationPolicy
       else
         scope.where(user_id: @user.id)
       end
-    end  
+    end
 
+    def initialize(user, event)
+      @user = user
+      @event = event
+    end
 
-  def initialize(user, event) 
-    @user = user
-    @event = event
+    def update?
+      user.admin? or not record.published?
+    end
   end
-
-  def update?
-    user.admin? or not record.published?
-  end
-  
 end
