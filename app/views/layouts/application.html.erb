@@ -33,13 +33,13 @@
       <li>
         <% if user_signed_in? %>
           <p class="navbar-text navbar-right">
-            <%= link_to 'Sign out', destroy_user_session_path,
+            <%= link_to t('Sign out'), destroy_user_session_path,
                 method: 'DELETE' %>
           </p>
         <% else %>
           <p class="navbar-text navbar-right">
-            <%= link_to 'Sign_up', new_user_registration_path %> |
-            <%= link_to 'Sign_in', new_user_session_path %>
+            <%= link_to t('Sign_up'), new_user_registration_path %> |
+            <%= link_to t('Sign_in'), new_user_session_path %>
           </p>
         <% end %>
       </li>
